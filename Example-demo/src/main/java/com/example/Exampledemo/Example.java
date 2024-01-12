@@ -14,4 +14,7 @@ public class Example {
     private String model;
     private String place;
     private int warranty;
+
+    public Example(int id, String name, String model, String place, String warranty) {
+    }
 }
