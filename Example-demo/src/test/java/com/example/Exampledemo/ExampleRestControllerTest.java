@@ -39,8 +39,8 @@ public class ExampleRestControllerTest {
     void getAllExample() throws Exception {
         // Arrange
         List<Example> exampleList = new ArrayList<>();
-        exampleList.add(new Example(1, "Lenevo", "LU58601", "Desktop", 2025));
-        exampleList.add(new Example(2, "Lenovo", "LA89510", "Desktop", 2026));
+        exampleList.add(new Example(1, "Lenevo", "LU58601", "Desktop", "2025"));
+        exampleList.add(new Example(2, "Lenovo", "LA89510", "Desktop", "2026"));
 
         when(exampleService.getAllExamples()).thenReturn(exampleList);
 
@@ -55,7 +55,7 @@ public class ExampleRestControllerTest {
     void getExampleById() throws Exception {
         // Arrange
         int exampleId = 1;
-        Example example = new Example(exampleId, "Lenevo", "LU58601", "Desktop", 2025);
+        Example example = new Example(exampleId, "Lenevo", "LU58601", "Desktop", "2025");
 
         when(exampleService.getExampleById(exampleId)).thenReturn(example);
 
@@ -70,7 +70,7 @@ public class ExampleRestControllerTest {
     @Test
     void addExample() throws Exception {
         // Arrange
-        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", 2025);
+        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", "2025");
 
         when(exampleService.createExample(any(Example.class))).thenReturn(example);
 
@@ -87,7 +87,7 @@ public class ExampleRestControllerTest {
     @Test
     void updateExample() throws Exception {
         // Arrange
-        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", 2027);
+        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", "2027");
 
         when(exampleService.updateExample(any(Example.class))).thenReturn(example);
 
@@ -116,7 +116,7 @@ public class ExampleRestControllerTest {
     @Test
     void deleteExample() throws Exception {
         // Arrange
-        Example example = new Example(1, "Lenovo", "LA89510", "Desktop", 2026);
+        Example example = new Example(1, "Lenovo", "LA89510", "Desktop", "2026");
 
         when(exampleService.deleteExample(any(Example.class))).thenReturn(example);
 
