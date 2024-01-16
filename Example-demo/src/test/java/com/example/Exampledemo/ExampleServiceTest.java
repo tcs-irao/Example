@@ -30,8 +30,8 @@ class ExampleServiceTest {
     void getAllExamples() {
         // Arrange
         List<Example> exampleList = new ArrayList<>();
-        exampleList.add(new Example(1, "Lenovo", "LU58601", "Desktop", "2025"));
-        exampleList.add(new Example(2, "Lenovo", "LA89510", "Desktop", "2026"));
+        exampleList.add(new Example(1, "Lenovo", "LU58601", "Desktop", 2025));
+        exampleList.add(new Example(2, "Lenovo", "LA89510", "Desktop", 2026));
 
         when(exampleRepo.findAll()).thenReturn(exampleList);
 
@@ -46,7 +46,7 @@ class ExampleServiceTest {
     void getExampleById() {
         // Arrange
         int exampleId = 1;
-        Example example = new Example(exampleId, "Lenovo", "LU58601", "Desktop", "2025");
+        Example example = new Example(exampleId, "Lenovo", "LU58601", "Desktop", 2025);
 
         when(exampleRepo.findById(exampleId)).thenReturn(Optional.of(example));
 
@@ -60,7 +60,7 @@ class ExampleServiceTest {
     @Test
     void createExample() {
         // Arrange
-        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", "2025");
+        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", 2025);
 
         // Act
         exampleService.createExample(example);
@@ -72,8 +72,8 @@ class ExampleServiceTest {
     @Test
     void updateExample() {
         // Arrange
-        Example existingExample = new Example(1, "Lenovo", "LU58601", "Desktop", "2025");
-        Example updatedExample = new Example(1, "Lenovo", "LU58601", "Desktop", "2025");
+        Example existingExample = new Example(1, "Lenovo", "LU58601", "Desktop", 2025);
+        Example updatedExample = new Example(1, "Lenovo", "LU58601", "Desktop", 2025);
 
         when(exampleRepo.findById(existingExample.getId())).thenReturn(Optional.of(existingExample));
         when(exampleRepo.save(existingExample)).thenReturn(updatedExample);
@@ -100,7 +100,7 @@ class ExampleServiceTest {
     @Test
     void deleteExample() {
         // Arrange
-        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", "2025");
+        Example example = new Example(1, "Lenovo", "LU58601", "Desktop", 2025);
 
         // Act
         exampleService.deleteExample(example);

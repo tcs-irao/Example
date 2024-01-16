@@ -2,10 +2,12 @@ package com.example.Exampledemo;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name="example")
+@NoArgsConstructor
 public class Example {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +17,6 @@ public class Example {
     private String place;
     private int warranty;
 
-    public Example(int id, String name, String model, String place, String warranty) {
+    public Example(int id, String name, String model, String place, int warranty) {
     }
 }
